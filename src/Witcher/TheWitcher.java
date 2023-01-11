@@ -27,6 +27,19 @@ public class TheWitcher {
 	public void setHasSoul(boolean hasSoul) {
 		this.hasSoul = hasSoul;
 	}
+	
+	public boolean isDeath() {
+		if (health==0) {
+			return true;
+		} else if (!hasSoul){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	
 	private int health;
 	private boolean hasSoul;
 	/**
@@ -35,8 +48,17 @@ public class TheWitcher {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		TheWitcher brujo = new TheWitcher();
+		brujo.setName("Juan");
+		brujo.setHealth(15);
+		brujo.setHasSoul(true);
 		
-
+		
+		if (brujo.isDeath()) {
+			System.out.println(brujo.getName() +" esta muerto");
+		} else {
+			System.out.println(brujo.getName() +" esta vivo");
+		}
 	}
 
 }
